@@ -5,14 +5,14 @@ Created on 2018-2-10
 
 @author: qi
 '''
-from django.conf.urls import url
+from django.urls import re_path
 from . import views
 
 app_name = 'wopiserver'
 urlpatterns = [
-    url(r'^files/(?P<fileid>[^/]+)$',views.wopiGetFileInfo),
-#     url(r'^files/(?P<fileid>[^/]+)/$',views.wopiGetFileInfo),
-    url(r'^files/(?P<fileid>[^/]+)/contents$',views.wopiFileContents),
-#     url(r'^files/(?P<fileid>[^/]+)/contents/$',views.wopiFileContents),
+    re_path(r'^files/(?P<fileid>[^/]+)$',views.wopiGetFileInfo),
+#     re_path(r'^files/(?P<fileid>[^/]+)/$',views.wopiGetFileInfo),
+    re_path(r'^files/(?P<fileid>[^/]+)/contents$',views.wopiFileContents),
+#     re_path(r'^files/(?P<fileid>[^/]+)/contents/$',views.wopiFileContents),
 ]
 
